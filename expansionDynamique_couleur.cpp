@@ -61,6 +61,21 @@ int main(int argc, char* argv[])
         }
     }
 
+    std::cout << "a0R : " << a0R << std::endl;
+    std::cout << "a1R : " << a1R << std::endl;
+    std::cout << "alphaR : " << -(255*a0R)/(a1R-a0R) << std::endl;
+    std::cout << "betaR : " << 255/(a1R-a0R) << std::endl;
+
+    std::cout << "a0G : " << a0G << std::endl;
+    std::cout << "a1G : " << a1G << std::endl;
+    std::cout << "alphaG : " << -(255*a0G)/(a1G-a0G) << std::endl;
+    std::cout << "betaG : " << 255/(a1G-a0G) << std::endl;
+
+    std::cout << "a0B : " << a0B << std::endl;
+    std::cout << "a1B : " << a1B << std::endl;
+    std::cout << "alphaB : " << -(255*a0B)/(a1B-a0B) << std::endl;
+    std::cout << "betaB : " << 255/(a1B-a0B) << std::endl;
+
 
     for (int elt=0; elt < nTaille3; elt++) {
         ImgOut[elt] = -(255/(a1R-a0R))*(a0R-ImgIn[elt]);

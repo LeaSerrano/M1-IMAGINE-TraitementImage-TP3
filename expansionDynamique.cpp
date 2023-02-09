@@ -43,6 +43,11 @@ int main(int argc, char* argv[])
         }
     }
 
+    std::cout << "a0 : " << a0 << std::endl;
+    std::cout << "a1 : " << a1 << std::endl;
+    std::cout << "alpha : " << -(255*a0)/(a1-a0) << std::endl;
+    std::cout << "beta : " << 255/(a1-a0) << std::endl;
+
 
     for (int i=0; i < nH; i++) {
         for (int j=0; j < nW; j++) {

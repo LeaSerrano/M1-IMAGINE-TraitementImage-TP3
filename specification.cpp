@@ -50,34 +50,26 @@ int main(int argc, char* argv[])
 
     float tabRepartition[256], transformation[256];
 
-    tabRepartition[0] = (float)histo[0];
+    tabRepartition[0] = (float)histo[0]/nTaille;
 
     for (int x = 1; x < 256; x++) {
         tabRepartition[x] = tabRepartition[x - 1] + (float)histo[x]/nTaille;
     }
 
-    /*for (int x = 1; x < 256; x++) {
-        tabRepartition[x] = (float)tabRepartition[x]*256/nTaille;
 
-        std::cout << tabRepartition[x] << std::endl;
-    }*/
-
-
-    int k; float inverse;
+    int x; float inverse;
 
     for (int i = 0; i < nH; i++) {
         for (int j = 0; j < nW; j++) {
             inverse = (float)ImgIn[i*nW+j]/255;
-
-            std::cout << inverse << std::endl;
             
-            k = 0;
-            while (tabRepartition[k] < inverse)
+            x = 0;
+            while (tabRepartition[x] < inverse)
             {
-                k++;
+                x++;
             }
 
-            ImgOut[i*nW+j] = k;            
+            ImgOut[i*nW+j] = x;  
         }
     }
 
